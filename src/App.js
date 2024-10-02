@@ -5,6 +5,7 @@ import LoadingScreen from './components/Loading/Loading';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import newRequest from './utils/newRequest';
 import './App.css';
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/submissions');
+        const response = await newRequest.get('/submissions');
         setSubmissions(response.data);
       } catch (error) {
         console.error('Error fetching submissions:', error);
@@ -37,7 +38,7 @@ function App() {
 
   const handleSubmission = async (input) => {
     try {
-      const response = await axios.post('http://localhost:3001/api/submissions', input);
+      const response = await newRequest.post('/submissions', input);
       setSubmissions((prev) => [...prev, response.data]);
 
       // Store the current timestamp in localStorage
