@@ -9,6 +9,9 @@ const baseURL = process.env.NODE_ENV === 'development'
 
 
 console.log("🚀 ~ baseURL:", baseURL)
+console.log("🚀 ~ process.env.NODE_ENV:", process.env.NODE_ENV)
+console.log("🚀 ~ process.env.BACKEND_URL:", process.env.BACKEND_URL)
+
 
 // Create an Axios instance
 const newRequest = axios.create({
