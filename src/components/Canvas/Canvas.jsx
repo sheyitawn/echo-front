@@ -44,14 +44,15 @@ function Canvas({ submissions }) {
   useEffect(() => {
     const currentTime = new Date().getTime();
 
-    const updatedSubmissions = submissions.map(submission => {
+    const updatedSubmissions = (submissions || []).map(submission => {
       const timeElapsed = currentTime - submission.timestamp;
       const timeInHours = timeElapsed / (1000 * 60 * 60); // Convert to hours
       const fadePercentage = Math.min(timeInHours / 72, 1); // Fade after 72 hours
       const opacity = 1 - fadePercentage;
-
+    
       return { ...submission, opacity }; // Add opacity to each submission
     });
+    
 
     // Generate random positions for new submissions
     const newPositions = updatedSubmissions.map((submission, index) => {
