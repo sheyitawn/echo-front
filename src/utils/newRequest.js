@@ -5,7 +5,10 @@ import { ToastContainer, toast } from 'react-toastify';
 // Base URL setup
 const baseURL = process.env.NODE_ENV === 'development'
   ? 'http://localhost:3001/api'  // Development URL
-  : process.env.API_URL;  // Production URL
+  : process.env.BACKEND_URL;  // Production URL
+
+
+console.log("🚀 ~ baseURL:", baseURL)
 
 // Create an Axios instance
 const newRequest = axios.create({
