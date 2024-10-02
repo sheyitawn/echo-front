@@ -1,0 +1,45 @@
+/* Canvas container styles */
+.canvas {
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: scroll;
+    /* overflow: visible; */
+    /* overflow:hidden; */
+  }
+  
+  /* Submission container that uses flexbox */
+  .submission_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Submissions start with 0 opacity and translated position */
+  .submission {
+    padding: .5rem;
+    border-radius: 10px;
+    background-color: #4229d1;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    width: fit-content;
+    max-width: 200px;
+    word-wrap: break-word;
+    opacity: 0;              /* Start with hidden */
+    transform-origin: center;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Apply smooth transition */
+  }
+  
+  /* When active, fade in and move to original position */
+  .submission.active {
+    opacity: 1;              /* Fade in */
+    transform: translateY(0); /* Move to its original position */
+  }
+  
