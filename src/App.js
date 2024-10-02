@@ -26,7 +26,6 @@ function App() {
     const fetchSubmissions = async () => {
       try {
         const response = await newRequest.get('/submissions');
-        console.log("🚀 ~ fetchSubmissions ~ response:", response)
         setSubmissions(response.data);
       } catch (error) {
         console.error('Error fetching submissions:', error);
