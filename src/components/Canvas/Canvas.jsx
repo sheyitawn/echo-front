@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './canvas.css';
 
 function Canvas({ submissions }) {
+  console.log("🚀 ~ Canvas ~ submissions:", submissions)
   const [fadedSubmissions, setFadedSubmissions] = useState([]);
   const [positions, setPositions] = useState([]); // Store positions for each submission
 
