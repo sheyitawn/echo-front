@@ -7,8 +7,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: scroll;
-    /* overflow: visible; */
+    /* overflow: scroll; */
+    overflow: visible;
     /* overflow:hidden; */
   }
   
@@ -20,6 +20,18 @@
     top: 0;
     left: 0;
   }
+
+  @keyframes appear {
+    0% {
+      transform: translateY(50px); /* Start slightly below */
+      opacity: 0;                  /* Fully transparent */
+    }
+    100% {
+      transform: translateY(0);     /* End at original position */
+      opacity: 1;                   /* Fully visible */
+    }
+  }
+  
   
   /* Submissions start with 0 opacity and translated position */
   .submission {
@@ -34,6 +46,7 @@
     word-wrap: break-word;
     opacity: 0;              /* Start with hidden */
     transform-origin: center;
+    /* animation: 1s ease-out 3s forwards appear;  */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Apply smooth transition */
   }
   
