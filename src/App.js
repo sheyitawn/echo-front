@@ -83,7 +83,8 @@ function App() {
           </div>
         </div>
       )}
-      <Canvas submissions={submissions} />
+
+      <Canvas submissions={submissions} setSubmissions={setSubmissions} />
     </div>
   );
 }
