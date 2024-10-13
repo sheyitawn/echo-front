@@ -1,15 +1,34 @@
 /* Canvas container styles */
 .canvas {
-    background-color: #000;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    /* overflow: scroll; */
-    overflow: visible;
-    /* overflow:hidden; */
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: scroll;
+  /* overflow: visible; */
+  /* overflow:hidden; */
+}
+
+::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+}
+  
+::-webkit-scrollbar-track {
+  background: #000000; 
+}
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #1a1818; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
   }
   
   /* Submission container that uses flexbox */
@@ -35,8 +54,8 @@
   
   /* Submissions start with 0 opacity and translated position */
   .submission {
-    padding: .5rem;
-    border-radius: 10px;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
     background-color: #4229d1;
     color: white;
     text-align: center;
@@ -48,11 +67,58 @@
     transform-origin: center;
     /* animation: 1s ease-out 3s forwards appear;  */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Apply smooth transition */
+    cursor: pointer;
+    position: relative;
   }
   
   /* When active, fade in and move to original position */
-  .submission.active {
-    opacity: 1;              /* Fade in */
-    transform: translateY(0); /* Move to its original position */
-  }
+.submission.active {
+  opacity: 1;              /* Fade in */
+  transform: translateY(0); /* Move to its original position */
+}
   
+
+.submission_modal {
+  cursor: auto;
+  position: absolute;
+  right: 0 ;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  display: flex;
+  gap: .5rem;
+  padding: .4rem .6rem .3rem .6rem;
+  background-color: #4229d1;
+  transition: opacity 0.5s ease-in-out;
+
+}
+
+.submission:hover {
+  background-color: #221377;
+}
+
+.submission_modal-vote {
+  cursor: pointer;
+}
+
+.submission_modal-vote:nth-child(1) {
+  color: rgb(0, 214, 0);
+}
+
+.submission_modal-vote:nth-child(1):hover {
+  color: rgb(0, 105, 0);
+
+}
+
+.submission_modal-vote:nth-child(3) {
+  color: red;
+}
+
+.submission_modal-vote:nth-child(3):hover {
+  color: rgb(148, 0, 0);
+}
+
+
+
+.vote_count {
+  font-size: .8em;
+}
