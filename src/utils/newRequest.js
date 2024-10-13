@@ -7,6 +7,7 @@ const baseURL = process.env.REACT_APP_NODE_ENV === 'development'
   ? 'http://localhost:3001/api'  // Development URL
   : process.env.REACT_APP_BACKEND_URL;  // Production URL
 
+// const baseURL = 'http://localhost:3001/api'    // for dev since other way isnt working
 // Create an Axios instance
 const newRequest = axios.create({
   baseURL,
