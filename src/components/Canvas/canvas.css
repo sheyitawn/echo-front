@@ -89,7 +89,7 @@
   padding: .4rem .6rem .3rem .6rem;
   background-color: #4229d1;
   transition: opacity 0.5s ease-in-out;
-
+  z-index: 999;
 }
 
 .submission:hover {
